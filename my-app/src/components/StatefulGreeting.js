@@ -7,22 +7,24 @@ class StatefulGreeting extends React.Component {
         this.state = {
             introduction: "Hello!",
             buttonText: "Exit",
+            count: 0,
         };
+    }
+    incrementCount() {
+        this.setState((prevState, prevProps) => {
+            return {
+                count: prevState.count + 1
+            }
+        })
     }
 
     handleClick() {
-        this.setState(
-            {
-                // use ternary operator to change the state based on the current state
-                // If state of introduction is "Hello!" then set to "Goodbye!" else set to "Hello!"
-                introduction: this.state.introduction === "Hello!" ? "Goodbye!" : "Hello!",
-                // If state of buttonText is "Exit" then set to "Enter" else set to "Exit"
-                buttonText: this.state.buttonText === "Exit" ? "Enter" : "Exit",
-            }, () => { // callback function passed as second arguement to setState, that will run after state update is complete
-                console.log('New state: ', this.state.introduction);
-                console.log('New state: ', this.state.buttonText);
+        this.setState((prevState,prevProps) => {
+            return {
+                introduction: prevState.introduction === "Hello!" ? "Goodbye!" : "Hello!",
+                buttonText: prevState.buttonText === "Enter" ? "Exit" : "Enter",
             }
-        );
+        })
     }
 
 
@@ -30,6 +32,8 @@ class StatefulGreeting extends React.Component {
         return (
             <div>
                 <h1>{this.state.introduction}, {this.props.greeting}</h1>
+                <h2>Count: {this.state.count}</h2>
+                <button onClick={() => this.incrementCount()}>increment count</button>
                 <button onClick={() => this.handleClick()}>{this.state.buttonText}</button>
             </div>
 
