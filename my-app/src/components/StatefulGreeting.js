@@ -10,6 +10,7 @@ class StatefulGreeting extends React.Component {
             count: 0,
         };
     }
+    
     incrementCount() {
         this.setState((prevState, prevProps) => {
             return {
