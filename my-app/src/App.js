@@ -11,6 +11,7 @@ import NestingComponents from './components/NestingComponents';
 import MethodsAsPropsParent from './components/MethodsAsPropsParent';
 import HTTPRequests from './components/HTTPRequests';
 import HTTPPost from './components/HTTPPost';
+import HTTPHooks from './components/HTTPHooks';
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
       {/* <NestingComponents /> */}
       {/* <MethodsAsPropsParent /> */}
       {/* <HTTPRequests /> */}
-      <HTTPPost />
+      {/* <HTTPPost /> */}
+      <HTTPHooks />
     </div>
   );
 }
