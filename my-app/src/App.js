@@ -10,6 +10,7 @@ import ConditionalRenderingFunctional from './components/ConditionalRenderingFun
 import NestingComponents from './components/NestingComponents';
 import MethodsAsPropsParent from './components/MethodsAsPropsParent';
 import HTTPRequests from './components/HTTPRequests';
+import HTTPPost from './components/HTTPPost';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
       <ConditionalRenderingFunctional connected={true} /> */}
       {/* <NestingComponents /> */}
       {/* <MethodsAsPropsParent /> */}
-      <HTTPRequests />
+      {/* <HTTPRequests /> */}
+      <HTTPPost />
     </div>
   );
 }
